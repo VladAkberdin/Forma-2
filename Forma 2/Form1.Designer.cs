@@ -70,6 +70,7 @@
             this.tableAdapterManager = new Forma_2.Database1DataSetTableAdapters.TableAdapterManager();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             idLabel = new System.Windows.Forms.Label();
             фамилияLabel = new System.Windows.Forms.Label();
             имяLabel = new System.Windows.Forms.Label();
@@ -430,12 +431,23 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Введите данные:";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(485, 57);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(174, 41);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Сохранить";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.TableBindingNavigatorSaveItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(681, 456);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.fillByToolStrip);
@@ -505,6 +517,7 @@
         private System.Windows.Forms.ToolStripButton fillByToolStripButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }
 
