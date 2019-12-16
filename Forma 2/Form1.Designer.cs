@@ -36,10 +36,6 @@
             System.Windows.Forms.Label отчествоLabel;
             System.Windows.Forms.Label дата_рожденияLabel;
             System.Windows.Forms.Label адресLabel;
-            this.database1DataSet = new Forma_2.Database1DataSet();
-            this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tableTableAdapter = new Forma_2.Database1DataSetTableAdapters.TableTableAdapter();
-            this.tableAdapterManager = new Forma_2.Database1DataSetTableAdapters.TableAdapterManager();
             this.tableBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -59,37 +55,32 @@
             this.отчествоTextBox = new System.Windows.Forms.TextBox();
             this.дата_рожденияDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.адресTextBox = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.фамилияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.отчествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датаРожденияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.адресDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet = new Forma_2.Database1DataSet();
+            this.tableTableAdapter = new Forma_2.Database1DataSetTableAdapters.TableTableAdapter();
+            this.tableAdapterManager = new Forma_2.Database1DataSetTableAdapters.TableAdapterManager();
             idLabel = new System.Windows.Forms.Label();
             фамилияLabel = new System.Windows.Forms.Label();
             имяLabel = new System.Windows.Forms.Label();
             отчествоLabel = new System.Windows.Forms.Label();
             дата_рожденияLabel = new System.Windows.Forms.Label();
             адресLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingNavigator)).BeginInit();
             this.tableBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.fillByToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tableBindingSource
-            // 
-            this.tableBindingSource.DataMember = "Table";
-            this.tableBindingSource.DataSource = this.database1DataSet;
-            // 
-            // tableTableAdapter
-            // 
-            this.tableTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.TableTableAdapter = this.tableTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Forma_2.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // tableBindingNavigator
             // 
@@ -117,7 +108,7 @@
             this.tableBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.tableBindingNavigator.Name = "tableBindingNavigator";
             this.tableBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.tableBindingNavigator.Size = new System.Drawing.Size(362, 25);
+            this.tableBindingNavigator.Size = new System.Drawing.Size(681, 25);
             this.tableBindingNavigator.TabIndex = 0;
             this.tableBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -148,6 +139,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -156,14 +148,14 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(46, 15);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(46, 22);
             this.bindingNavigatorCountItem.Text = "для {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -171,7 +163,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
             // 
             // bindingNavigatorMoveLastItem
@@ -180,13 +172,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -203,7 +195,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Удалить";
             // 
             // tableBindingNavigatorSaveItem
@@ -211,14 +203,14 @@
             this.tableBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tableBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("tableBindingNavigatorSaveItem.Image")));
             this.tableBindingNavigatorSaveItem.Name = "tableBindingNavigatorSaveItem";
-            this.tableBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.tableBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.tableBindingNavigatorSaveItem.Text = "Сохранить данные";
             this.tableBindingNavigatorSaveItem.Click += new System.EventHandler(this.TableBindingNavigatorSaveItem_Click);
             // 
             // idLabel
             // 
             idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(16, 42);
+            idLabel.Location = new System.Drawing.Point(16, 77);
             idLabel.Name = "idLabel";
             idLabel.Size = new System.Drawing.Size(20, 13);
             idLabel.TabIndex = 1;
@@ -227,7 +219,7 @@
             // idTextBox
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Id", true));
-            this.idTextBox.Location = new System.Drawing.Point(115, 39);
+            this.idTextBox.Location = new System.Drawing.Point(115, 74);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(200, 22);
             this.idTextBox.TabIndex = 2;
@@ -235,7 +227,7 @@
             // фамилияLabel
             // 
             фамилияLabel.AutoSize = true;
-            фамилияLabel.Location = new System.Drawing.Point(16, 70);
+            фамилияLabel.Location = new System.Drawing.Point(16, 105);
             фамилияLabel.Name = "фамилияLabel";
             фамилияLabel.Size = new System.Drawing.Size(59, 13);
             фамилияLabel.TabIndex = 3;
@@ -244,7 +236,7 @@
             // фамилияTextBox
             // 
             this.фамилияTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Фамилия", true));
-            this.фамилияTextBox.Location = new System.Drawing.Point(115, 67);
+            this.фамилияTextBox.Location = new System.Drawing.Point(115, 102);
             this.фамилияTextBox.Name = "фамилияTextBox";
             this.фамилияTextBox.Size = new System.Drawing.Size(200, 22);
             this.фамилияTextBox.TabIndex = 4;
@@ -252,7 +244,7 @@
             // имяLabel
             // 
             имяLabel.AutoSize = true;
-            имяLabel.Location = new System.Drawing.Point(16, 98);
+            имяLabel.Location = new System.Drawing.Point(16, 133);
             имяLabel.Name = "имяLabel";
             имяLabel.Size = new System.Drawing.Size(32, 13);
             имяLabel.TabIndex = 5;
@@ -261,7 +253,7 @@
             // имяTextBox
             // 
             this.имяTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Имя", true));
-            this.имяTextBox.Location = new System.Drawing.Point(115, 95);
+            this.имяTextBox.Location = new System.Drawing.Point(115, 130);
             this.имяTextBox.Name = "имяTextBox";
             this.имяTextBox.Size = new System.Drawing.Size(200, 22);
             this.имяTextBox.TabIndex = 6;
@@ -269,7 +261,7 @@
             // отчествоLabel
             // 
             отчествоLabel.AutoSize = true;
-            отчествоLabel.Location = new System.Drawing.Point(16, 126);
+            отчествоLabel.Location = new System.Drawing.Point(16, 161);
             отчествоLabel.Name = "отчествоLabel";
             отчествоLabel.Size = new System.Drawing.Size(58, 13);
             отчествоLabel.TabIndex = 7;
@@ -278,7 +270,7 @@
             // отчествоTextBox
             // 
             this.отчествоTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Отчество", true));
-            this.отчествоTextBox.Location = new System.Drawing.Point(115, 123);
+            this.отчествоTextBox.Location = new System.Drawing.Point(115, 158);
             this.отчествоTextBox.Name = "отчествоTextBox";
             this.отчествоTextBox.Size = new System.Drawing.Size(200, 22);
             this.отчествоTextBox.TabIndex = 8;
@@ -286,7 +278,7 @@
             // дата_рожденияLabel
             // 
             дата_рожденияLabel.AutoSize = true;
-            дата_рожденияLabel.Location = new System.Drawing.Point(16, 155);
+            дата_рожденияLabel.Location = new System.Drawing.Point(16, 190);
             дата_рожденияLabel.Name = "дата_рожденияLabel";
             дата_рожденияLabel.Size = new System.Drawing.Size(93, 13);
             дата_рожденияLabel.TabIndex = 9;
@@ -295,7 +287,7 @@
             // дата_рожденияDateTimePicker
             // 
             this.дата_рожденияDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tableBindingSource, "Дата рождения", true));
-            this.дата_рожденияDateTimePicker.Location = new System.Drawing.Point(115, 151);
+            this.дата_рожденияDateTimePicker.Location = new System.Drawing.Point(115, 186);
             this.дата_рожденияDateTimePicker.Name = "дата_рожденияDateTimePicker";
             this.дата_рожденияDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.дата_рожденияDateTimePicker.TabIndex = 10;
@@ -303,7 +295,7 @@
             // адресLabel
             // 
             адресLabel.AutoSize = true;
-            адресLabel.Location = new System.Drawing.Point(16, 182);
+            адресLabel.Location = new System.Drawing.Point(16, 217);
             адресLabel.Name = "адресLabel";
             адресLabel.Size = new System.Drawing.Size(41, 13);
             адресLabel.TabIndex = 11;
@@ -312,17 +304,120 @@
             // адресTextBox
             // 
             this.адресTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Адрес", true));
-            this.адресTextBox.Location = new System.Drawing.Point(115, 179);
+            this.адресTextBox.Location = new System.Drawing.Point(115, 214);
             this.адресTextBox.Name = "адресTextBox";
             this.адресTextBox.Size = new System.Drawing.Size(200, 22);
             this.адресTextBox.TabIndex = 12;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.фамилияDataGridViewTextBoxColumn,
+            this.имяDataGridViewTextBoxColumn,
+            this.отчествоDataGridViewTextBoxColumn,
+            this.датаРожденияDataGridViewTextBoxColumn,
+            this.адресDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.tableBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(19, 310);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(640, 134);
+            this.dataGridView1.TabIndex = 13;
+            // 
+            // fillByToolStrip
+            // 
+            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillByToolStripButton});
+            this.fillByToolStrip.Location = new System.Drawing.Point(0, 25);
+            this.fillByToolStrip.Name = "fillByToolStrip";
+            this.fillByToolStrip.Size = new System.Drawing.Size(681, 25);
+            this.fillByToolStrip.TabIndex = 14;
+            this.fillByToolStrip.Text = "fillByToolStrip";
+            // 
+            // fillByToolStripButton
+            // 
+            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByToolStripButton.Name = "fillByToolStripButton";
+            this.fillByToolStripButton.Size = new System.Drawing.Size(40, 22);
+            this.fillByToolStripButton.Text = "FillBy";
+            this.fillByToolStripButton.Click += new System.EventHandler(this.FillByToolStripButton_Click);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // фамилияDataGridViewTextBoxColumn
+            // 
+            this.фамилияDataGridViewTextBoxColumn.DataPropertyName = "Фамилия";
+            this.фамилияDataGridViewTextBoxColumn.HeaderText = "Фамилия";
+            this.фамилияDataGridViewTextBoxColumn.Name = "фамилияDataGridViewTextBoxColumn";
+            this.фамилияDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // имяDataGridViewTextBoxColumn
+            // 
+            this.имяDataGridViewTextBoxColumn.DataPropertyName = "Имя";
+            this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
+            this.имяDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // отчествоDataGridViewTextBoxColumn
+            // 
+            this.отчествоDataGridViewTextBoxColumn.DataPropertyName = "Отчество";
+            this.отчествоDataGridViewTextBoxColumn.HeaderText = "Отчество";
+            this.отчествоDataGridViewTextBoxColumn.Name = "отчествоDataGridViewTextBoxColumn";
+            this.отчествоDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // датаРожденияDataGridViewTextBoxColumn
+            // 
+            this.датаРожденияDataGridViewTextBoxColumn.DataPropertyName = "Дата рождения";
+            this.датаРожденияDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
+            this.датаРожденияDataGridViewTextBoxColumn.Name = "датаРожденияDataGridViewTextBoxColumn";
+            this.датаРожденияDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // адресDataGridViewTextBoxColumn
+            // 
+            this.адресDataGridViewTextBoxColumn.DataPropertyName = "Адрес";
+            this.адресDataGridViewTextBoxColumn.HeaderText = "Адрес";
+            this.адресDataGridViewTextBoxColumn.Name = "адресDataGridViewTextBoxColumn";
+            this.адресDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tableBindingSource
+            // 
+            this.tableBindingSource.DataMember = "Table";
+            this.tableBindingSource.DataSource = this.database1DataSet;
+            // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tableTableAdapter
+            // 
+            this.tableTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.TableTableAdapter = this.tableTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Forma_2.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(362, 391);
+            this.ClientSize = new System.Drawing.Size(681, 456);
+            this.Controls.Add(this.fillByToolStrip);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(idLabel);
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(фамилияLabel);
@@ -339,11 +434,14 @@
             this.Name = "Form1";
             this.Text = "Домашнее задание";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingNavigator)).EndInit();
             this.tableBindingNavigator.ResumeLayout(false);
             this.tableBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.fillByToolStrip.ResumeLayout(false);
+            this.fillByToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,6 +472,15 @@
         private System.Windows.Forms.TextBox отчествоTextBox;
         private System.Windows.Forms.DateTimePicker дата_рожденияDateTimePicker;
         private System.Windows.Forms.TextBox адресTextBox;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фамилияDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn отчествоDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn датаРожденияDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn адресDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStrip fillByToolStrip;
+        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
     }
 }
 

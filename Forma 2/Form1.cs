@@ -31,5 +31,18 @@ namespace Forma_2
             this.tableTableAdapter.Fill(this.database1DataSet.Table);
 
         }
+
+        private void FillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.tableTableAdapter.FillBy(this.database1DataSet.Table);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }
